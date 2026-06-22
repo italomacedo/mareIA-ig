@@ -40,10 +40,30 @@ jobs:
             -o publisher.jar
           ls -la publisher.jar
 
+      - name: Localizar tooling da imagem (sushi/java/node/jekyll fora do PATH do shell)
+        shell: bash
+        run: |
+          set -euo pipefail
+          add() {
+            for name in "$@"; do
+              p="$(find /usr /opt /home /root \( -type f -o -type l \) -name "$name" 2>/dev/null | grep -E '/bin/' | head -1 || true)"
+              if [ -n "$p" ]; then
+                echo "$(dirname "$p")" >> "$GITHUB_PATH"
+                echo "encontrado: $name -> $p"
+              else
+                echo "::warning::binario nao encontrado: $name"
+              fi
+            done
+          }
+          add node sushi java jekyll ruby gem bundle
+
       - name: Compilar o IG (SUSHI + IG Publisher)
         shell: bash
         run: |
-          sushi .
+          set -euo pipefail
+          echo "PATH=$PATH"
+          sushi --version
+          java -version
           java -jar publisher.jar publisher -ig .
 
       - name: Falhar se houver erros de QA

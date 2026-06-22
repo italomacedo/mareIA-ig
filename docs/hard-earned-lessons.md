@@ -53,8 +53,12 @@ Registro vivo de armadilhas e como evitá-las. **Atualize a cada problema não-�
 - **Causa:** na imagem, os helpers `_updatePublisher.sh`/`_genonce.sh` não estão no `PATH`, e o
   diretório de trabalho não está no `PATH`. Os scripts do próprio repo também chegam sem bit de
   execução após checkout em Linux (foram criados no Windows).
-- **Solução:** no CI, usar comandos explícitos em vez dos scripts:
-  `curl -L .../publisher.jar -o publisher.jar` → `sushi .` → `java -jar publisher.jar publisher -ig .`.
-  (Os scripts `_genonce`/`_updatePublisher` do repo seguem úteis para uso local interativo.)
+- **Solução (1ª tentativa, insuficiente):** chamar comandos explícitos — mas `sushi`/`java` também
+  não estão no PATH do shell não-login do Actions (rodando como root): a imagem instala o tooling no
+  perfil do usuário `publisher`, então `sushi: command not found` (exit 127) persistia.
+- **Solução final:** num passo dedicado, **descobrir os binários por `find`** (`node sushi java jekyll
+  ruby gem bundle`) e gravar seus diretórios em `$GITHUB_PATH`; o passo seguinte então roda
+  `java -jar publisher.jar publisher -ig .` (o IG Publisher invoca o SUSHI sozinho). Não depender do
+  profile/login shell da imagem. (Os scripts `_genonce`/`_updatePublisher` do repo seguem úteis localmente.)
 
 <!-- Próximas lições: adicionar abaixo com id incremental. -->
