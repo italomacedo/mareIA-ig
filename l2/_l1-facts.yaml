@@ -1,0 +1,145 @@
+# Fatos L1 normalizados — Pathway ATENTO 60+ (mareIA)
+# Fonte: sources/Protocolo_Clinico_Geral_mareIA_WP1.pdf (extração em _protocolo_extract.txt)
+# Gerado pelo subagente l1-extractor. NÃO contém conteúdo fora do protocolo.
+# Pendências clínicas marcadas com status: review + adr.
+
+meta:
+  pathway: ATENTO 60+
+  populacao: Pessoas idosas (>= 60 anos)
+  instituicao_lider: UFPE
+  fonte: Protocolo Clínico Geral mareIA WP1, Maio/2026
+
+recommendations:
+  - id: rec-telemonitoramento-idoso
+    texto: Telemonitoramento ativo da pessoa idosa na APS com IA para identificar risco, gerar alertas e apoiar decisão.
+    source: "p.4 (Contexto); p.5 (Objetivos)"
+  - id: rec-estratificacao-ivcf20
+    texto: Estratificar a vulnerabilidade clínico-funcional do idoso pelo IVCF-20 na triagem e no monitoramento.
+    source: "p.11 (Instrumentos); p.16 (Periodicidade); Anexo 15.6.3"
+  - id: rec-base-icope
+    texto: Base conceitual ICOPE (OMS, 2017) e Caderno de Atenção Básica nº 19 (Envelhecimento e Saúde da Pessoa Idosa).
+    source: "p.20 (Referências)"
+
+actors:
+  - id: patient-elderly
+    rotulo: Pessoa idosa (pessoa cuidada)
+    acesso: App móvel (online/offline)
+    funcao: Autorrelato de sintomas, recepção de orientações e conteúdo educativo.
+    source: "p.7-8 (Tabela de usuários)"
+  - id: chw
+    rotulo: Agente Comunitário de Saúde (Agente de Coleta)
+    acesso: App móvel (online/offline)
+    funcao: Verifica elegibilidade, garante TCLE, cadastra, aplica IVCF-20 e opera IoT, registra dados.
+    source: "p.7,11 (Agente de Coleta — ATENTO 60+ = ACS da USF/ESF)"
+  - id: care-team
+    rotulo: Equipe de Gestão do Cuidado (ESF/USF)
+    acesso: Web (dashboard) / app profissional
+    funcao: Revisa classificação e alertas, prioriza ações, decide conduta, constrói plano de cuidado.
+    source: "p.8,10"
+  - id: monitoring-team
+    rotulo: Equipe de Gestão do Monitoramento
+    acesso: Web (dashboard de gestão clínica)
+    funcao: Supervisiona o protocolo e apoia clinicamente a equipe de cuidado via telessaúde.
+    source: "p.8,10"
+  - id: facility-manager
+    rotulo: Gestor da unidade de saúde
+    acesso: Web (dashboard gestor, dados desidentificados)
+    funcao: Monitoramento do território, priorização, relatórios gerenciais.
+    source: "p.8; p.17 (Anonimização)"
+
+data_elements:
+  ivcf20:
+    descricao: Índice de Vulnerabilidade Clínico-Funcional-20 (20 itens). Total e faixa de risco.
+    total_max: 40            # status: review (ADR-0004)
+    faixas:                  # status: review (ADR-0004)
+      - {min: 0, max: 6, rotulo: "Idoso robusto (baixo risco)"}
+      - {min: 7, max: 14, rotulo: "Em risco de fragilização (médio)"}
+      - {min: 15, max: 40, rotulo: "Idoso frágil (alto risco)"}
+    itens:
+      - {id: q01-idade, secao: Idade, pergunta: "Qual é a sua idade?", pesos: "60-74=0; 75-84=1; >=85=3"}
+      - {id: q02-autopercepcao, secao: Autopercepção da saúde, pergunta: "Saúde comparada a outros da idade", pesos: "Excelente/muito boa/boa=0; Regular/ruim=1"}
+      - {id: q03-avdi-compras, secao: AVD Instrumental, pergunta: "Deixou de fazer compras?", pesos: "Sim=4", teto_grupo: "AVDI q3-q5 máx 4"}
+      - {id: q04-avdi-dinheiro, secao: AVD Instrumental, pergunta: "Deixou de controlar dinheiro/contas?", pesos: "Sim=4", teto_grupo: "AVDI q3-q5 máx 4"}
+      - {id: q05-avdi-domesticos, secao: AVD Instrumental, pergunta: "Deixou de pequenos trabalhos domésticos?", pesos: "Sim=4", teto_grupo: "AVDI q3-q5 máx 4"}
+      - {id: q06-avdb-banho, secao: AVD Básica, pergunta: "Deixou de tomar banho sozinho?", pesos: "Sim=6"}
+      - {id: q07-cognicao-esquecido, secao: Cognição, pergunta: "Alguém falou que está ficando esquecido?", pesos: "Sim=1"}
+      - {id: q08-cognicao-piora, secao: Cognição, pergunta: "Esquecimento piorando nos últimos meses?", pesos: "Sim=1"}
+      - {id: q09-cognicao-impede, secao: Cognição, pergunta: "Esquecimento impede atividade do cotidiano?", pesos: "Sim=2"}
+      - {id: q10-humor-desanimo, secao: Humor, pergunta: "Desânimo, tristeza ou desesperança no último mês?", pesos: "Sim=2"}
+      - {id: q11-humor-interesse, secao: Humor, pergunta: "Perdeu interesse/prazer em atividades?", pesos: "Sim=2"}
+      - {id: q12-mob-bracos, secao: Mobilidade (alcance/preensão), pergunta: "Incapaz de elevar braços acima do ombro?", pesos: "Sim=1"}
+      - {id: q13-mob-objetos, secao: Mobilidade (alcance/preensão), pergunta: "Incapaz de manusear/segurar pequenos objetos?", pesos: "Sim=1"}
+      - {id: q14-mob-aerobica, secao: Mobilidade (capacidade aeróbica/muscular), pergunta: "Alguma das 4 condições (perda de peso; IMC<22; panturrilha<31cm; marcha 4m>5s)?", pesos: "Sim=2", teto_grupo: "máx 2"}
+      - {id: q15-marcha-dificuldade, secao: Mobilidade (marcha), pergunta: "Dificuldade para caminhar que impede atividade?", pesos: "Sim=2"}
+      - {id: q16-marcha-quedas, secao: Mobilidade (marcha), pergunta: "Duas ou mais quedas no último ano?", pesos: "Sim=2"}
+      - {id: q17-continencia, secao: Continência, pergunta: "Perde urina/fezes sem querer?", pesos: "Sim=2"}
+      - {id: q18-visao, secao: Comunicação (visão), pergunta: "Problemas de visão que impedem atividade?", pesos: "Sim=2"}
+      - {id: q19-audicao, secao: Comunicação (audição), pergunta: "Problemas de audição que impedem atividade?", pesos: "Sim=2"}
+      - {id: q20-comorbidades, secao: Comorbidades múltiplas, pergunta: "Alguma das 3: >=5 doenças crônicas; >=5 medicamentos/dia; internação <6 meses?", pesos: "Sim=4", teto_grupo: "máx 4"}
+  sinais_vitais_iot:
+    - {id: pa-sistolica, rotulo: PA sistólica, unidade: mmHg, loinc: "8480-6", dispositivo: Esfigmomanômetro digital}
+    - {id: pa-diastolica, rotulo: PA diastólica, unidade: mmHg, loinc: "8462-4", dispositivo: Esfigmomanômetro digital}
+    - {id: glicemia-capilar, rotulo: Glicemia capilar, unidade: mg/dL, loinc: "2339-0", dispositivo: Glicosímetro}
+    - {id: spo2, rotulo: Saturação de O2, unidade: "%", loinc: "59408-5", dispositivo: Oxímetro de pulso}
+    - {id: fc, rotulo: Frequência cardíaca, unidade: "/min", loinc: "8867-4", dispositivo: Oxímetro de pulso}
+    - {id: peso, rotulo: Peso corporal, unidade: kg, loinc: "29463-7", dispositivo: Balança digital}
+    - {id: estatura, rotulo: Estatura, unidade: cm, loinc: "8302-2", dispositivo: Estadiômetro}
+    - {id: imc, rotulo: Índice de massa corporal, unidade: kg/m2, loinc: "39156-5", derivado: "peso/estatura^2"}
+    - {id: temperatura, rotulo: Temperatura corporal, unidade: Cel, loinc: "8310-5", dispositivo: Termômetro}
+  cadastro:
+    - {id: idade-elegivel, rotulo: Idade >= 60 anos, fonte: "Critério de inclusão ATENTO 60+"}
+    - {id: cadastro-usf, rotulo: Cadastrado na USF e residente na área da ESF, fonte: "Critério de inclusão"}
+    - {id: tcle, rotulo: TCLE assinado/registrado digitalmente, fonte: "p.9; p.19 (Ética)"}
+
+decision_rules:
+  - id: dr-escore-ivcf20
+    descricao: Soma dos 20 itens (com tetos de grupo) = escore total.
+    source: "Anexo 15.6.3"
+    status: review
+    adr: ADR-0004
+  - id: dr-faixa-risco
+    descricao: 0-6 Robusto; 7-14 Risco de fragilização; >=15 Frágil.
+    source: "Anexo 15.6.3 (Score)"
+    status: review
+    adr: ADR-0004
+  - id: dr-alertas
+    descricao: >
+      Disparo de alerta (independe da faixa): queda (qualquer); internação recente (<6m);
+      IoT fora de referência crítica (PA, FC, oximetria); perda de peso não intencional;
+      IMC < 22; humor alterado; autopercepção piorando em visitas consecutivas.
+    source: "p.13 (Tabela de alertas — ATENTO 60+)"
+  - id: dr-periodicidade
+    descricao: "IVCF-20 alto = 3 meses; médio = 2 meses; baixo = 1 mês. Alertas críticos antecipam agendamento/aumentam frequência."
+    source: "p.16 (Periodicidade — ATENTO 60+)"
+    status: review
+    adr: ADR-0005   # contraintuitivo (maior risco, menor frequência)
+
+indicators:
+  processo:
+    - {id: ind-taxa-cadastro, nome: Taxa de cadastro, numerador: Elegíveis cadastrados, denominador: Elegíveis identificados, source: "p.15"}
+    - {id: ind-completude-coleta, nome: Taxa de completude de coleta, numerador: Coletas realizadas conforme protocolo, denominador: Coletas previstas, source: "p.15"}
+    - {id: ind-alertas-resp-tempo, nome: Taxa de alertas respondidos em tempo, numerador: Alertas críticos/prioritários com resposta documentada, denominador: Alertas críticos/prioritários gerados, source: "p.15"}
+    - {id: ind-funcionamento-offline, nome: Taxa de funcionamento offline, numerador: Coletas offline com sync bem-sucedido, denominador: Coletas offline, source: "p.15"}
+  resultado:
+    - {id: ind-variacao-risco, nome: Variação das classificações de risco/alertas no tempo, source: "p.15"}
+    - {id: ind-satisfacao, nome: Nível de satisfação de usuários, source: "p.15"}
+    - {id: ind-tempo-resposta-alerta, nome: Tempo médio de resposta a alertas críticos, source: "p.15"}
+
+requirements:
+  funcionais:
+    - {id: RF-01, texto: "Cadastro de paciente apenas com TCLE registrado", source: "p.9,19"}
+    - {id: RF-02, texto: "Coleta por formulário digital e dispositivos IoT via app", source: "p.7,10,12"}
+    - {id: RF-03, texto: "Operação offline com sincronização automática ao reconectar", source: "p.10,11"}
+    - {id: RF-04, texto: "Cálculo automático do escore IVCF-20 e do IMC", source: "p.11; Anexo 15.6.3"}
+    - {id: RF-05, texto: "Estratificação de risco em 3 faixas e geração/classificação de alertas", source: "p.10,13"}
+    - {id: RF-06, texto: "Cálculo da próxima coleta conforme risco/alertas", source: "p.16"}
+    - {id: RF-07, texto: "Dashboard longitudinal por paciente e grupo; mapa de risco georreferenciado; lista de prioridades", source: "p.7,10"}
+    - {id: RF-08, texto: "Notificação em tempo real às equipes de cuidado e monitoramento", source: "p.10,14"}
+    - {id: RF-09, texto: "Telessaúde (chat assíncrono) e conteúdo educativo", source: "p.7"}
+  nao_funcionais:
+    - {id: RNF-01, texto: "Interoperabilidade HL7 FHIR R4; CID-10 e LOINC", source: "p.17"}
+    - {id: RNF-02, texto: "Envio à RNDS conforme Portaria GM/MS nº 1.434/2020; integração e-SUS APS/Território", source: "p.17"}
+    - {id: RNF-03, texto: "LGPD: consentimento específico, minimização, criptografia, log de auditoria, TLS", source: "p.17,19"}
+    - {id: RNF-04, texto: "Dashboard gestor com dados desidentificados (Art.12 LGPD)", source: "p.17,19"}
+    - {id: RNF-05, texto: "IoT via BLE; dispositivos certificados ANVISA", source: "p.17"}
+    - {id: RNF-06, texto: "Desempenho em territórios com conectividade precária", source: "p.10,11"}

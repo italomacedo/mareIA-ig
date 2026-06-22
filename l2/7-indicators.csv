@@ -1,0 +1,8 @@
+id,nome,tipo,numerador,denominador,descricao,fonte_l1
+ind-taxa-cadastro,Taxa de cadastro,processo,Elegiveis cadastrados na plataforma,Elegiveis identificados,Proporcao de elegiveis efetivamente cadastrados,p.15
+ind-completude-coleta,Taxa de completude de coleta,processo,Coletas realizadas conforme protocolo,Coletas previstas,Aderencia ao cronograma de coletas,p.15
+ind-alertas-resp-tempo,Taxa de alertas respondidos em tempo,processo,Alertas criticos/prioritarios com resposta documentada,Alertas criticos/prioritarios gerados,Resposta tempestiva a alertas,p.15
+ind-funcionamento-offline,Taxa de funcionamento offline,processo,Coletas offline com sync bem-sucedido,Coletas realizadas em modo offline,Robustez do modo offline,p.15
+ind-variacao-risco,Variacao das classificacoes de risco,resultado,Mudancas de faixa de risco/alertas,Populacao monitorada,Evolucao do risco ao longo do tempo,p.15
+ind-satisfacao,Nivel de satisfacao de usuarios,resultado,Respostas satisfatorias,Respondentes,Satisfacao de ACS/profissionais/pacientes,p.15
+ind-tempo-resposta-alerta,Tempo medio de resposta a alertas criticos,resultado,Soma dos tempos (geracao->conduta),Alertas criticos respondidos,Tempo medio ate conduta,p.15

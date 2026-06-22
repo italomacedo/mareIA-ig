@@ -1,0 +1,50 @@
+# Hard-Earned Lessons
+
+Registro vivo de armadilhas e como evitá-las. **Atualize a cada problema não-óbvio resolvido.**
+
+---
+
+## HEL-001 — Extração do PDF: encoding e acentuação
+- **Sintoma:** `Read` do PDF falhou (`pdftoppm not found`); extração via Python saía com acentos
+  quebrados quando impressa direto no terminal Windows.
+- **Causa:** terminal em code page legada; faltava forçar UTF-8 na escrita do arquivo.
+- **Solução:** extrair com PyMuPDF (`fitz`) e gravar com `open(dst,'w',encoding='utf-8')`; ler o
+  `.txt` resultante com a ferramenta Read. Texto-fonte fica em `sources/_protocolo_extract.txt`.
+
+## HEL-002 — `sushi init` é interativo
+- **Sintoma:** trava em ambiente não-interativo.
+- **Solução:** recriar `sushi-config.yaml` e `ig.ini` manualmente (equivalente ao que o init gera).
+  Validar cedo com `sushi .` mesmo sem FSH (config-only) — deve dar 0 erros.
+
+## HEL-003 — Páginas declaradas x arquivos existentes
+- **Sintoma:** IG Publisher reclama de páginas do menu sem arquivo correspondente.
+- **Solução:** toda página listada em `sushi-config.yaml > pages/menu` precisa existir em
+  `input/pagecontent/`. Crie stubs antes do primeiro build completo.
+
+## HEL-004 — IG Publisher exige Java; cuidado com a checagem de versão
+- **Observação:** `java -version` escreve na **stderr**; um teste ingênuo pode parecer "vazio" e
+  sugerir falsamente que o Java não existe. Use `Get-Command java` para detectar de forma confiável.
+- **Ambiente atual:** Temurin/OpenJDK **25** presente em `C:\Program Files\Eclipse Adoptium\`.
+  SUSHI (gate de FSH) roda sem Java; o site/QA do IG Publisher precisa de Java 11+ (ok aqui).
+
+## HEL-005 — Suppressed messages file e obs-7
+- **Sintoma:** IG Publisher acusou 2 erros: (1) "Suppressed messages file not found"; (2) `obs-7`
+  na Observation de escore IVCF-20.
+- **Causa:** (1) faltava `input/ignoreWarnings.txt` (esperado por padrão); (2) o componente "faixa"
+  usava o **mesmo código** da Observation principal — a invariante `obs-7` proíbe valor de nível
+  superior quando há componente de código idêntico.
+- **Solução:** criar `input/ignoreWarnings.txt` (com cabeçalho `== Suppressed Messages ==`); dar um
+  código distinto ao componente faixa (`atento60-obs-code#ivcf-20-faixa`, separado de `#ivcf-20-score`).
+
+## HEL-006 — `category = vital-signs` dispara o profile padrão automaticamente
+- **Sintoma:** ao criar exemplo de PA sistólica (LOINC 8480-6) com `category = vital-signs`, o
+  validador aplicou o profile **bp** (pressão arterial) e exigiu painel 85354-9 + componentes
+  sistólica/diastólica → 6 erros. Trocando para **peso** (29463-7), restou erro pedindo
+  `valueQuantity.unit`.
+- **Causa:** o validador FHIR detecta o profile de vital sign pelo código+categoria e impõe suas
+  regras (bp exige painel; bodyweight exige `unit` textual além do código UCUM).
+- **Solução:** para exemplos de sinal vital simples, usar códigos sem painel (peso/temperatura) e
+  **sempre** preencher `valueQuantity.unit` (string) além de `value`/`code`/`system`. Para PA, modelar
+  o painel completo (85354-9 + componentes) em iteração futura.
+
+<!-- Próximas lições: adicionar abaixo com id incremental. -->

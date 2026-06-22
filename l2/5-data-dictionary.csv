@@ -1,0 +1,35 @@
+id,rotulo_ptbr,componente_dak,tipo,valores_ou_unidade,sistema_codigo,codigo,obrigatorio,fonte_l1
+idade-elegivel,Idade (>= 60),Elegibilidade,integer,anos,,,sim,Inclusao ATENTO 60+
+cadastro-usf,Cadastrado na USF / area ESF,Elegibilidade,boolean,sim|nao,,,sim,Inclusao ATENTO 60+
+tcle,TCLE assinado/registrado,Elegibilidade,boolean,sim|nao,,,sim,p.9; p.19
+q01-idade,IVCF-20 1 Idade,IVCF-20,choice,60-74=0|75-84=1|>=85=3,atento60-ivcf-item,q01,sim,Anexo 15.6.3
+q02-autopercepcao,IVCF-20 2 Autopercepcao da saude,IVCF-20,choice,boa=0|regular-ruim=1,atento60-ivcf-item,q02,sim,Anexo 15.6.3
+q03-avdi-compras,IVCF-20 3 Deixou de fazer compras,IVCF-20,boolean,sim=4|nao=0,atento60-ivcf-item,q03,sim,Anexo 15.6.3
+q04-avdi-dinheiro,IVCF-20 4 Deixou de controlar dinheiro,IVCF-20,boolean,sim=4|nao=0,atento60-ivcf-item,q04,sim,Anexo 15.6.3
+q05-avdi-domesticos,IVCF-20 5 Deixou trabalhos domesticos,IVCF-20,boolean,sim=4|nao=0,atento60-ivcf-item,q05,sim,Anexo 15.6.3
+q06-avdb-banho,IVCF-20 6 Deixou de tomar banho sozinho,IVCF-20,boolean,sim=6|nao=0,atento60-ivcf-item,q06,sim,Anexo 15.6.3
+q07-cognicao-esquecido,IVCF-20 7 Esta ficando esquecido,IVCF-20,boolean,sim=1|nao=0,atento60-ivcf-item,q07,sim,Anexo 15.6.3
+q08-cognicao-piora,IVCF-20 8 Esquecimento piorando,IVCF-20,boolean,sim=1|nao=0,atento60-ivcf-item,q08,sim,Anexo 15.6.3
+q09-cognicao-impede,IVCF-20 9 Esquecimento impede cotidiano,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q09,sim,Anexo 15.6.3
+q10-humor-desanimo,IVCF-20 10 Desanimo/tristeza,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q10,sim,Anexo 15.6.3
+q11-humor-interesse,IVCF-20 11 Perda de interesse/prazer,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q11,sim,Anexo 15.6.3
+q12-mob-bracos,IVCF-20 12 Incapaz de elevar bracos,IVCF-20,boolean,sim=1|nao=0,atento60-ivcf-item,q12,sim,Anexo 15.6.3
+q13-mob-objetos,IVCF-20 13 Incapaz de segurar objetos,IVCF-20,boolean,sim=1|nao=0,atento60-ivcf-item,q13,sim,Anexo 15.6.3
+q14-mob-aerobica,IVCF-20 14 Perda peso/IMC<22/panturrilha/marcha,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q14,sim,Anexo 15.6.3
+q15-marcha-dificuldade,IVCF-20 15 Dificuldade para caminhar,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q15,sim,Anexo 15.6.3
+q16-marcha-quedas,IVCF-20 16 Duas ou mais quedas no ano,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q16,sim,Anexo 15.6.3
+q17-continencia,IVCF-20 17 Perde urina/fezes,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q17,sim,Anexo 15.6.3
+q18-visao,IVCF-20 18 Problemas de visao,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q18,sim,Anexo 15.6.3
+q19-audicao,IVCF-20 19 Problemas de audicao,IVCF-20,boolean,sim=2|nao=0,atento60-ivcf-item,q19,sim,Anexo 15.6.3
+q20-comorbidades,IVCF-20 20 Polipatologia/polifarmacia/internacao,IVCF-20,boolean,sim=4|nao=0,atento60-ivcf-item,q20,sim,Anexo 15.6.3
+ivcf-score,Escore total IVCF-20,IVCF-20,integer,0-40,atento60-ivcf-risk,score,sim,Anexo 15.6.3 (REVISAR ADR-0004)
+ivcf-faixa,Faixa de risco IVCF-20,IVCF-20,choice,robusto|risco-fragilizacao|fragil,atento60-ivcf-risk,faixa,sim,Anexo 15.6.3 (REVISAR ADR-0004)
+pa-sistolica,PA sistolica,Sinais vitais IoT,Quantity,mmHg,http://loinc.org,8480-6,nao,p.12
+pa-diastolica,PA diastolica,Sinais vitais IoT,Quantity,mmHg,http://loinc.org,8462-4,nao,p.12
+glicemia-capilar,Glicemia capilar,Sinais vitais IoT,Quantity,mg/dL,http://loinc.org,2339-0,nao,p.12
+spo2,Saturacao de oxigenio,Sinais vitais IoT,Quantity,%,http://loinc.org,59408-5,nao,p.12
+fc,Frequencia cardiaca,Sinais vitais IoT,Quantity,/min,http://loinc.org,8867-4,nao,p.12
+peso,Peso corporal,Sinais vitais IoT,Quantity,kg,http://loinc.org,29463-7,nao,p.12
+estatura,Estatura,Sinais vitais IoT,Quantity,cm,http://loinc.org,8302-2,nao,p.12
+imc,Indice de massa corporal,Sinais vitais IoT,Quantity,kg/m2,http://loinc.org,39156-5,nao,p.12 (derivado)
+temperatura,Temperatura corporal,Sinais vitais IoT,Quantity,Cel,http://loinc.org,8310-5,nao,p.12

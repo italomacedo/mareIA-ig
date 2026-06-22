@@ -1,0 +1,16 @@
+tabela,entrada,condicao,saida,observacao,fonte_l1
+escore-ivcf20,itens q01..q20,soma com tetos de grupo (AVDI q3-5 max 4; q14 max 2; q20 max 4),ivcf-score (0-40),REVISAR ADR-0004,Anexo 15.6.3
+faixa-risco,ivcf-score,0 a 6,Robusto (baixo),REVISAR ADR-0004,Anexo 15.6.3
+faixa-risco,ivcf-score,7 a 14,Risco de fragilizacao (medio),REVISAR ADR-0004,Anexo 15.6.3
+faixa-risco,ivcf-score,>= 15,Fragil (alto),REVISAR ADR-0004,Anexo 15.6.3
+periodicidade,faixa-risco,Alto (Fragil),coleta a cada 3 meses,REVISAR ADR-0005 (contraintuitivo),p.16
+periodicidade,faixa-risco,Medio,coleta a cada 2 meses,REVISAR ADR-0005,p.16
+periodicidade,faixa-risco,Baixo (Robusto),coleta a cada 1 mes,REVISAR ADR-0005,p.16
+alerta,evento queda,qualquer queda,ALERTA,independe da faixa,p.13
+alerta,internacao,internacao recente < 6 meses,ALERTA,,p.13
+alerta,IoT PA/FC/oximetria,fora de referencia critica,ALERTA,,p.13
+alerta,peso,perda de peso nao intencional,ALERTA,,p.13
+alerta,IMC,IMC < 22,ALERTA,,p.13
+alerta,humor,humor alterado,ALERTA,,p.13
+alerta,autopercepcao,piorando em visitas consecutivas,ALERTA,,p.13
+conduta-alerta,alerta critico,presente,antecipar agendamento / aumentar frequencia de acompanhamento,suporte a decisao (nao substitui clinico),p.16; p.14

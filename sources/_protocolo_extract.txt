@@ -1,0 +1,1298 @@
+
+===== PAGE 1 =====
+ 
+ 
+ 
+ 
+ 
+Plataforma mareIA 
+Telemonitoramento Inteligente para Gestão de Risco e Cuidado Integral 
+ 
+Protocolo Clínico Geral 
+Work Package 1 (WP1) — Relatório do 1º Trimestre 
+Programa Redes de Colaboração em Saúde Digital 2025 — RNP  
+Versão 1.0  |  Maio de 2026 
+ 
+ 
+ 
+ 
+ 
+
+
+===== PAGE 2 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+Sumário 
+1. Apresentação​
+3 
+2. Contexto e Justificativa​
+4 
+3. Objetivos do Protocolo​
+5 
+3.1 Objetivo Geral​
+5 
+3.2 Objetivos Específicos​
+5 
+4. Cenários Clínicos e Critérios de Elegibilidade​
+6 
+4.1 Critérios de Inclusão por cenário​
+6 
+4.2 Critérios Gerais de Exclusão (todos os cenários)​
+6 
+5. Módulos, Usuários, Perfis e Responsabilidades Gerais​
+7 
+6. Fluxo Clínico Geral da Plataforma mareIA​
+9 
+6.1 Pré-Intervenção: Entrada e Cadastro​
+9 
+6.2 Intervenção — 1ª Etapa: Coleta e Triagem inicial​
+9 
+6.3 Intervenção — 2ª Etapa: Monitoramento Contínuo​
+10 
+6.4 Pós-Intervenção: Resposta Clínica e Gestão do Cuidado​
+10 
+7. Agentes de Coleta, Instrumentos Clínicos e Dispositivos de Coleta​
+11 
+7.1 Agentes de Coleta​
+11 
+7.2 Instrumentos Validados por Cenário​
+11 
+7.3 Dispositivos IoT Previstos​
+11 
+8. Lógica de Geração e Classificação de Alertas Clínicos​
+13 
+9. Suporte à Decisão Clínica​
+14 
+10. Periodicidade de Monitoramento por Cenário​
+15 
+11. Indicadores de Monitoramento do Protocolo​
+15 
+14.1 Indicadores de Processo​
+15 
+14.2 Indicadores de Resultado​
+15 
+12. Interoperabilidade com o Ecossistema SUS Digital​
+17 
+13. Aspectos Éticos, Legais e de Privacidade​
+17 
+14. Referências​
+18 
+15. ANEXOS​
+19 
+ 
+UFPE / Maio de 2026​
+Página 2 
+
+
+===== PAGE 3 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+1. Apresentação 
+Este documento constitui o Protocolo Clínico Geral da Plataforma mareIA, entregue como 
+produto do Work Package 1 (WP1) ao Programa Redes de Colaboração em Saúde Digital 
+2025 da Rede Nacional de Ensino e Pesquisa (RNP). Ele descreve o fluxo clínico 
+consolidado, os critérios de elegibilidade, os atores envolvidos, os instrumentos de coleta, a 
+lógica de alertas e os requisitos éticos e legais que orientarão o desenvolvimento técnico da 
+plataforma e a condução dos quatro cenários de pesquisa. 
+O protocolo está ancorado no Fluxograma Clínico Geral da Plataforma mareIA (versão 
+consolidada, maio de 2026) e serve de referência comum para as equipes de saúde e de 
+tecnologia da informação das instituições participantes. 
+ 
+UFPE / Maio de 2026​
+Página 3 
+
+
+===== PAGE 4 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+2. Contexto e Justificativa 
+O Sistema Único de Saúde (SUS) enfrenta o desafio de garantir cuidado contínuo e 
+equitativo a populações vulneráveis, especialmente em regiões de difícil acesso e zonas 
+rurais. A fragmentação do cuidado, a sobrecarga das equipes da Estratégia Saúde da 
+Família (ESF) e a ausência de ferramentas de telemonitoramento integradas comprometem 
+a prevenção de agravos e a longitudinalidade do cuidado. 
+A Plataforma mareIA propõe uma solução digital interoperável, extensível e de código 
+aberto para apoiar o telemonitoramento ativo na Atenção Primária à Saúde (APS), utilizando 
+Inteligência Artificial (IA) de forma ética e responsável para identificar riscos, gerar alertas 
+clínicos e apoiar a tomada de decisão das equipes de saúde. 
+A plataforma será validada em quatro cenários clínicos reais, contemplando grupos 
+prioritários:  
+(1) pessoas idosas (ATENTO 60+); 
+(2) pessoas com hipertensão e diabetes (CardioRemoto); 
+(3) pessoas em cuidados paliativos e seus cuidadores  (FamilIAr_Ativa) e  
+(4) trabalhadores rurais expostos a agrotóxicos (AgroSUS). 
+ 
+UFPE / Maio de 2026​
+Página 4 
+
+
+===== PAGE 5 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+3. Objetivos do Protocolo 
+3.1 Objetivo Geral 
+Definir o fluxo clínico padrão da Plataforma mareIA para orientar o desenvolvimento 
+tecnológico, a condução dos estudos de caso e a integração entre as equipes de saúde e 
+de TI de modo a fortalecer a comunicação entre as pessoas cuidadas e a equipe de saúde.  
+3.2 Objetivos Específicos 
+•​
+Descrever as fases clínicas e operacionais do ciclo de cuidado mediado pela 
+plataforma. 
+•​
+Definir os critérios de elegibilidade por cenário clínico. 
+•​
+Especificar os atores, papéis e fluxos de informação nos módulos da plataforma. 
+•​
+Especificar os instrumentos de coleta de cada cenário (formulários e dispositivos de 
+IOT) 
+•​
+Definir critérios de geração e classificação de alertas clínicos. 
+•​
+Orientar as condutas pós-alerta e o suporte à decisão clínica. 
+•​
+Garantir conformidade com a LGPD, a Resolução CNS 466/2012 e o SUS Digital 
+(RNDS/HL7 FHIR). 
+•​
+Monitorar de forma remota Sintomas e Parâmetros Fisiológicos  
+•​
+Promover a educação em Saúde a partir da inserção na plataforma de conteúdos 
+educativos claros e acessíveis para as pessoas cuidadas.  
+ 
+UFPE / Maio de 2026​
+Página 5 
+
+
+===== PAGE 6 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+4. Cenários Clínicos e Critérios de Elegibilidade 
+A plataforma será validada em quatro estudos de caso, cada um liderado por uma 
+instituição participante. O protocolo clínico geral se aplica a todos os quatro cenários 
+(ANEXO 1 - FLUXOGRAMA GERAL). As especificidades de cada um (ANEXOS 1-4), serão 
+detalhados a seguir. 
+4.1 Critérios de Inclusão por cenário  
+ 
+Cenário Clínico 
+População-Alvo 
+Critério de Inclusão (resumo) 
+ATENTO 60+ (UFPE) 
+Pessoas idosas (≥ 60 anos) 
+Cadastrado na USF da área; residente 
+na área de abrangência da equipe ESF 
+CardioRemoto 
+(UFPB) 
+Adultos com HAS e/ou DM2 
+Diagnóstico confirmado de HAS e/ou 
+DM2; cadastrado na APS; área remota 
+ou com baixa cobertura especializada 
+FamilIAr_Ativa 
+(UFPel) 
+Pessoas em cuidados paliativos 
+domiciliares e seus cuidadores 
+cuidador familiar identificado e 
+consentido; pessoa em cuidado 
+paliativo domiciliar 
+AgroSUS (FATEC) 
+Trabalhadores rurais com 
+exposição a agrotóxicos 
+Trabalhador rural cadastrado na APS 
+da área; atividade agrícola com uso de 
+agrotóxicos relatado 
+ 
+4.2 Critérios Gerais de Exclusão (todos os cenários) 
+•​
+Recusa em assinar o TCLE. 
+•​
+Ausência de cadastro ativo nas unidades de saúde dos cenários clínicos. 
+•​
+Mudança de domicílio para fora da área de abrangência durante o 
+acompanhamento. 
+ 
+UFPE / Maio de 2026​
+Página 6 
+
+
+===== PAGE 7 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+5. Módulos, Usuários, Perfis e Responsabilidades Gerais 
+A plataforma mareIA possuirá três módulos centrais: 
+(1)​Módulo de coleta e processamento com Inteligência Artificial (IA) 
+(2)​Módulo de Telessaúde / Comunicação segura 
+(3)​Módulo de Educação em Saúde 
+Módulo 
+Função no Fluxo Clínico 
+M1 — Gestão de 
+coleta e 
+processamento 
+de Dados 
+Aplicativo móvel para coleta de dados; formulários clínicos digitais; 
+integração com dispositivos IoT; funcionamento offline. 
+ 
+Integração de dados externos, dados de coletas, análise e 
+processamento de dados; 
+ 
+Dashboard em tempo real para equipe de gestão do cuidado e gestão 
+da equipe; linha do tempo do paciente e grupo de pacientes; mapa de 
+risco georreferenciado; Lista de prioridades. 
+ 
+Suporte à decisão clínica 
+M2 — Telessaúde 
+/Comunicação 
+segura 
+Chat assíncrono bidirecional para comunicação do paciente com a 
+pessoa que coleta, ou entre a equipe de gestão do cuidado com o 
+paciente. 
+M3 — Educação 
+em saúde 
+Repositório de conteúdos educativos (vídeos, infográficos, manuais); 
+prescrição de conteúdo pelo profissional de saúde; promoção da 
+literacia em saúde. 
+ 
+O fluxo clínico da mareIA envolve cinco perfis de usuário da plataforma: 
+(1)​Paciente ou pessoa cuidada 
+(2)​Agente de Coleta (pessoa que coleta dados) 
+(3)​Equipe de Gestão do Monitoramento (Hospital, Núcleo de Telessaúde, 
+Unidade de Cuidados Paliativos, etc.) 
+(4)​Equipe de Gestão do Cuidado (Hospital, USF, Unidade de Cuidado Paliativo, 
+etc.) 
+(5)​Equipe de gestão da unidade de saúde (Coordenação da unidade de saúde) 
+ 
+ Cada usuário da plataforma acessa módulos específicos conforme seu papel na linha 
+de cuidado. 
+ 
+Usuário da 
+plataforma 
+Perfil / Acesso 
+Função Principal 
+ Módulos 
+Paciente/ 
+Pessoa Cuidada 
+App móvel 
+(online/offline) 
+Auto-relato de sintomas, 
+recepção de orientações 
+e conteúdo educativo 
+Módulo Telessaúde - 
+Comunicação Segura 
+e Módulo Educação 
+em Saúde 
+Agente de 
+Coleta 
+App móvel 
+(online/offline) 
+Cadastro de pacientes, 
+coleta de dados clínicos 
+Módulo Coleta e 
+processamento de 
+dados por IA 
+UFPE / Maio de 2026​
+Página 7 
+
+
+===== PAGE 8 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+(formulários + IoT); 
+Módulo Telessaúde 
+-Comunicação Segura 
+e Módulo Educação 
+em Saúde 
+ 
+Equipe de 
+Gestão do 
+Monitoramento 
+Web (dashboard 
+gestão clínica) 
+Supervisão do 
+monitoramento e 
+prestação de suporte 
+clínico à equipe de 
+Gestão do Cuidado; 
+encaminhamento de 
+informações relevantes e 
+acionamento do módulo 
+de comunicação segura 
+para subsidiar a tomada 
+de decisão clínica.  
+Módulo Coleta e 
+processamento de 
+dados por IA 
+(formulários + IoT); 
+Dashboard Gestor de 
+Moniotoramento; 
+Módulo Telessaúde 
+-Comunicação Segura 
+Equipe de 
+Gestão do 
+Cuidado 
+Web (dashboard 
+gestão clínica)/ App 
+profissional 
+Revisão de classificação 
+e alertas dos pacientes, 
+Monitoramento do 
+território, priorização de 
+ações, tomada de decisão 
+clínica, plano de 
+acompanhamento. 
+Módulo Coleta e 
+processamento de 
+dados por IA 
+(formulários + IoT); 
+Módulo Telessaúde 
+-Comunicação Segura 
+e Módulo Educação 
+em Saúde 
+ 
+Gestor da 
+unidade de 
+saúde 
+Web (dashboard 
+gestor) 
+Monitoramento do 
+território, priorização de 
+ações, relatórios 
+gerenciais 
+Dashboard Gestor 
+(dados 
+desidentificados) 
+ 
+UFPE / Maio de 2026​
+Página 8 
+
+
+===== PAGE 9 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+6. Fluxo Clínico Geral da Plataforma mareIA 
+O fluxo clínico está estruturado em quatro macrofases, conforme o Fluxograma Clínico 
+Geral consolidado (versão maio/2026) (ANEXO 1). As fases seguem uma lógica de cuidado 
+contínuo: identificação → coleta de triagem→ resposta clínica → coleta de 
+monitoramento → resposta clínica. 
+ 
+PRÉ-INTERVENÇÃO 
+Entrada / Cadastro 
+INTERVENÇÃO 1ª 
+ETAPA Coleta / 
+Imagem Inicial 
+INTERVENÇÃO 2ª 
+ETAPA 
+Monitoramento 
+Contínuo 
+PÓS-INTERVENÇÃO 
+Resposta & Gestão 
+do Cuidado 
+Identificação de 
+pessoas elegíveis pela 
+equipe de gestão do 
+cuidado 
+Triagem conforme cada 
+cenário clínico 
+Ciclo contínuo de coleta 
+conforme protocolo de 
+cada cenário 
+Processamento por IA: 
+integração + 
+classificação de risco 
+Verificação de critérios 
+de inclusão e exclusão 
+Aplicação de 
+instrumentos clínicos 
+validados 
+Aplicação de 
+instrumentos clínicos 
+validados 
+Geração de alertas 
+(crítico / prioritário / 
+cuidado / informativo) 
+Assinatura do TCLE 
+Coleta de dados por 
+formulário digital 
+Coleta de dados por 
+formulário digital 
+Dashboard em tempo 
+real (mapa de risco, 
+lista de prioridades) 
+Cadastro na plataforma 
+(integração com outros 
+sistemas) 
+Coleta via dispositivos 
+IoT  
+Coleta via dispositivos 
+IoT 
+Notificação das equipes 
+de monitoramento e de 
+gestão do cuidado 
+(tempo real) 
+Importação de dados 
+externos via integração 
+padrão 
+Transmissão e 
+sincronização de dados 
+à plataforma 
+Transmissão e 
+sincronização de dados 
+à plataforma 
+Suporte à decisão 
+clínica da equipe de 
+gestão do cuidado 
+Definição do protocolo / 
+área de abrangência 
+Processamento por IA: 
+integração + 
+classificação de risco 
+Processamento por IA: 
+integração +  
+Sugestão de 
+agendamento por risco 
+ou prioridade e alertas 
+Definição dos 
+parâmetros de 
+monitoramento e 
+critérios de risco 
+Geração de alertas 
+(crítico / prioritário / 
+cuidado / informativo) 
+Reclassificação 
+periódica de risco e 
+alertas 
+Plano de cuidado 
+baseado em dados 
+Consolidação do perfil 
+clínico inicial do 
+paciente 
+Geração da linha de 
+base do paciente 
+(Baseline) 
+Atualização do 
+monitoramento 
+(Sentinel loop) 
+Dashboard gestor 
+(dados 
+desidentificados) 
+ 
+6.1 Pré-Intervenção: Entrada e Cadastro 
+A entrada na plataforma ocorre pela identificação de pacientes elegíveis pela equipe de 
+gestão do cuidado que já são pacientes da unidade. A equipe de gestão do cuidado verifica 
+os critérios de elegibilidade conforme o cenário clínico aplicável e a pessoa responsável 
+pela coleta registra o paciente na plataforma por meio do módulo de Coleta e 
+Processamento de Dados por IA. 
+Apenas pacientes com TCLE assinado (ou registrado em formato digital conforme 
+regulamentação aplicável) são cadastrados na plataforma. O consentimento precede 
+qualquer coleta de dados. 
+ 
+UFPE / Maio de 2026​
+Página 9 
+
+
+===== PAGE 10 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+6.2 Intervenção — 1ª Etapa: Coleta e Triagem inicial 
+Após o cadastro, a pessoa responsável pela coleta aplica os instrumentos clínicos definidos 
+para cada cenário e realiza a coleta de dados em formulários digitais e/ou dispositivos IoT 
+via app da plataforma. Esses dados serão então processados com IA pela plataforma 
+mareIA gerando uma linha de base do paciente, determinando classificação de risco e 
+gerando alertas críticos se dados alterados. 
+O aplicativo de coleta opera em modo offline, permitindo uso em áreas sem conectividade, 
+com sincronização automática quando a conexão for restabelecida — funcionalidade 
+essencial para os territórios com conectividade precária. 
+6.3 Intervenção — 2ª Etapa: Monitoramento Contínuo 
+Após a triagem inicial, o paciente entra no ciclo de monitoramento contínuo (Sentinel loop). 
+Coletas periódicas são realizadas conforme a frequência definida no protocolo de cada 
+cenário (e conforme estratificação de risco e alertas). Os dados coletados são transmitidos 
+à plataforma e submetidos à reanálise por IA para reclassificação de risco e geração de 
+novos alertas. 
+6.4 Pós-Intervenção: Resposta Clínica e Gestão do Cuidado 
+Os dados coletados e processados, que integram as informações, classificam o paciente 
+por risco ou prioridade, detectam alertas e geram saídas para as equipes de gestão do 
+cuidado e gestão de monitoramento. 
+As saídas para equipe de monitoramento e de gestão do cuidado incluem:  
+(1) mapa de risco e /ou de condições clínicas com georreferenciamento e com os 
+alertas críticos;  
+(2) lista de prioridades de atendimento em tempo real (conforme classificação de 
+risco e alertas);  
+(3) dashboard longitudinal de cada paciente e dos dados agrupados; e 
+(4) suporte a tomada de decisão clínica (recomendações quanto a prioridades, 
+agendamentos, frequência de coletas e etc. conforme cenários clínicos); 
+A Equipe de Gestão do Cuidado recebe notificações em tempo real e pode acionar o 
+módulo de Telessaúde de comunicação (chat) e educação em saúde. O plano de cuidado é 
+construído pela equipe de gestão do cuidado com base nos dados e no suporte à tomada 
+de decisão gerada pela plataforma mareIA. 
+Ao mesmo tempo a que a equipe de gestão do monitoramento supervisiona continuamente 
+a aplicação do protocolo e a condução do cuidado realizada pela equipe de gestão do 
+cuidado, prestando apoio clínico e gerencial sempre que necessário, por meio do módulo de 
+Telessaúde de comunicação segura. 
+ 
+UFPE / Maio de 2026​
+Página 10 
+
+
+===== PAGE 11 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+7. Agentes de Coleta, Instrumentos Clínicos e Dispositivos 
+de Coleta 
+7.1 Agentes de Coleta  
+O Agente de Coleta é o profissional responsável pela aplicação dos instrumentos clínicos e 
+dispositivos IoT previstos no protocolo de cada cenário. Sua atuação ocorre na 1ª Etapa de 
+Intervenção (Coleta e Triagem Inicial) e nas coletas de monitoramento contínuo (2ª Etapa), 
+conforme a periodicidade definida em cada cenário. 
+O perfil do Agente de Coleta varia de acordo com o cenário clínico e com a natureza dos 
+dados coletados: 
+●​ ATENTO 60+: Agente Comunitário de Saúde (ACS) vinculado à Unidade de Saúde 
+da Família (USF), com suporte da equipe multiprofissional da Estratégia Saúde da 
+Família (ESF). 
+●​ CardioRemoto: Servidor do HULW/UFPB vinculado ao Ambulatório de Telessaúde 
+— Endocrinologia. Atua em contexto hospitalar, coletando dados no dia em que o 
+paciente comparece para exames laboratoriais programados. Dispositivos de uso 
+compartilhado institucional; suporte clínico da equipe médica do ambulatório. 
+●​ FamilIAr_Ativa: Cuidador da pessoa em cuidados paliativos, com suporte dos 
+profissionais da equipe de cuidado paliativo e profissionais da equipe matricial da 
+Cuidativa.  
+●​ AgroSUS: Agente Comunitário de Saúde da Família (ACF) vinculado à UBS da área 
+de abrangência da propriedade rural, com suporte do médico da UBS. Por atuar em 
+campo com conectividade limitada, opera o aplicativo em modo offline e sincroniza 
+os dados ao retornar à UBS. 
+São atribuições gerais do Agente de Coleta: 
+●​ verificar os critérios de elegibilidade do participante conforme o cenário clínico 
+aplicável; 
+●​ assegurar o registro do TCLE assinado (ou em formato digital, conforme 
+regulamentação) antes de qualquer coleta de dados; 
+●​ aplicar os instrumentos clínicos validados e operar os dispositivos IoT conforme o 
+protocolo do cenário; 
+●​ registrar os dados coletados nos formulários digitais da plataforma; e 
+●​ comunicar a Equipe de Gestão do Cuidado ou à Equipe de Gestão do 
+Monitoramento qualquer intercorrência, recusa ou situação de risco identificada 
+durante a coleta. 
+7.2 Instrumentos Validados por Cenário 
+Cada cenário clínico utilizará instrumentos validados na literatura e no contexto brasileiro. A 
+seleção de instrumentos foi realizada conforme cenário-específicos.  
+•​
+ATENTO 60+: dados da ficha de cadastro da APS e dados da ficha domiciliar da 
+APS já coletados na rotina do Agente Comunitário de Saúde), IVCF-20 (Índice de 
+Vulnerabilidade Clínico-Funcional). 
+•​
+CardioRemoto: Formulário clínico estruturado com três blocos: (i) 
+antropometria — peso, altura, IMC automático e circunferência abdominal; (ii) 
+sinais vitais — PA, FC e glicemia capilar; e (iii) exames laboratoriais — glicose 
+em jejum, HbA1c, perfil lipídico (LDL, HDL, triglicerídeos, colesterol total), 
+função renal (creatinina, ureia) e função hepática (TGO, TGP). Complementado 
+UFPE / Maio de 2026​
+Página 11 
+
+
+===== PAGE 12 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+por histórico clínico: tabagismo, atividade física, uso de estatina e eventos 
+cardiovasculares. A classificação de risco baseia-se inteiramente nesses 
+parâmetros (RN-C001 a C005), sem instrumentos psicométricos. 
+•​
+FamilIAr_Ativa: Dois instrumentos de autoaplicação pelo paciente ou 
+cuidador: (i) ESAS — 6 sintomas (dor, dispneia, ansiedade, cansaço, apetite, 
+bem-estar), pontuados de 0–10, soma 0–60, classificado em Baixo (0–30), 
+Moderado (31–50) ou Alto (51–70), com timestamp imutável; e (ii) Escala de 
+Zarit — 22 itens (0–4), soma 0–88, classifica a sobrecarga do cuidador em 
+Leve, Moderada ou Severa. 
+•​
+AgroSUS: Dois instrumentos complementares: (i) Questionário de Triagem 
+Ocupacional — preenchido pelo ACF com dados do processo produtivo (culturas, 
+defensivos, EPI, histórico de intoxicação e sintomas), cujo envio à API de IA externa 
+só ocorre com todos os campos obrigatórios preenchidos (RN-AS003); e (ii) Exame 
+de Colinesterase Eritrocitária — biomarcador laboratorial solicitado pelo médico da 
+UBS, com resultado registrado na plataforma e utilizado para classificação de risco 
+por inibição enzimática: Baixo (≤ 50–60%), Médio (60–90%) e Alto (90–100%), 
+conforme RN-AS004. 
+ 
+7.3 Dispositivos IoT Previstos 
+Os respectivos dispositivos abaixo serão utilizados nos cenários inicialmente aplicáveis 
+descritos na tabela, que poderão eventualmente contemplar diferentes cenários em um 
+segundo momento. Todos devem preferencialmente suportar conectividade Bluetooth para 
+integração direta ao aplicativo. 
+ 
+Dispositivo IoT 
+Dado Coletado 
+Cenários Inicialmente 
+Aplicáveis 
+Esfigmomanômetro digital 
+PA sistólica e diastólica (mmHg) 
+ATENTO 60+, CardioRemoto, 
+AgroSUS 
+Glicosímetro 
+Glicemia capilar (mg/dL) 
+ATENTO 60+ CardioRemoto, 
+(seletivo) 
+Oxímetro de pulso 
+SpO2 (%), frequência cardíaca 
+(bpm) 
+ATENTO 60+, FamilIAr_Ativa, 
+AgroSUS 
+Balança digital 
+Peso (kg) 
+ATENTO 60+, 
+CardioRemotoFamilIAr_Ativa 
+Estadiômetro 
+Estatura (cm) → IMC 
+ATENTO 60+, CardioRemoto,  
+Termômetro 
+Temperatura corporal (°C) 
+ATENTO 60+, AgroSUS, 
+FamilIAr_Ativa 
+Smartphone 
+Dados capturados por 
+dispositivos IoT 
+ATENTO 60+, AgroSUS, 
+FamilIAr_Ativa 
+Tablet 
+Dados capturados por 
+dispositivos IoT 
+ATENTO 60+, AgroSUS, 
+FamilIAr_Ativa 
+ 
+UFPE / Maio de 2026​
+Página 12 
+
+
+===== PAGE 13 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+8. Lógica de Geração e Classificação de Alertas Clínicos 
+O módulo de coleta e processamento de dados analisa os dados coletados, classifica os 
+achados em três níveis de prioridades e identifica variáveis críticas para emissão de alertas. 
+A tabela a seguir apresenta a estrutura geral e exemplos representativos. 
+ 
+UFPE / Maio de 2026​
+Página 13 
+Nível de 
+Prioridade 
+ATENTO 60+ 
+CardioRemoto 
+AgroSus 
+FarmilIAr_Ativa 
+ALTA 
+IVF-20 alto risco 
+3+ parâmetros 
+fora da meta OU 
+evento 
+cardiovascular 
+aterosclerótico ≤ 
+12 meses (Grave 
+/ Vermelho) 
+Inibição de 
+colinesterase 
+eritrocitária 
+90–100% (Alto) 
+ESAS Alto: soma 
+51–70 
+MÉDIA 
+IVF-20 médio 
+risco 
+1–2 parâmetros 
+fora da meta, 
+sem evento 
+cardiovascular 
+recente 
+(Moderado / 
+Amarelo) 
+Inibição de 
+colinesterase 
+60–90% (Médio) 
+ESAS Moderado: 
+soma 31–50; ou 
+Zarit Moderada 
+(cuidador) 
+BAIXA 
+IVF-20 baixo risco 
+Todos os 
+parâmetros 
+dentro da meta 
+— PA < 140/90 
+mmHg, HbA1c < 
+7%, LDL < 130 
+mg/dL e sem 
+evento 
+cardiovascular no 
+último ano 
+(Controlado / 
+Verde) 
+Inibição de 
+colinesterase ≤ 
+50–60% (Baixo) 
+ESAS Baixo: soma 
+0–30 
+ALERTAS 
+ 
+DISPARO 
+DE 
+ALERTAS 
+Queda (qualquer) 
+Internação recente 
+IoT fora de 
+referência crítica 
+(PA, FC, oximetria) 
+Perda de peso não 
+intencional  
+IMC < 22 
+Humor alterado 
+Autopercepção 
+piorando em visitas 
+consecutivas 
+PA ≥ 180/120 
+mmHg ou < 90/60 
+mmHg; Glicemia ≥ 
+250 mg/dL ou < 70 
+mg/dL; LDL ≥ 190 
+mg/dL; HbA1c 
+muito elevada (> 
+10%); Evento 
+cardiovascular nos 
+últimos 12 meses 
+Inibição de 
+colinesterase > 
+90%; Sintomas 
+agudos de 
+intoxicação por 
+organofosforados/ca
+rbamatos (náusea, 
+vômitos, tremores, 
+salivação excessiva, 
+miose); Exposição 
+sem EPI adequado 
+a agrotóxico de alta 
+toxicidade 
+Soma ESAS > 50 → 
+alerta duplo: 
+notificação ao 
+profissional + 
+orientação imediata 
+ao cuidador 
+(RN-F05); Zarit 
+Severa → risco de 
+colapso do cuidador 
+(RN-F06); Sintoma 
+ESAS individual ≥ 8 
+(dor intensa ou 
+dispneia grave); 
+Ausência de registro 
+no intervalo 
+esperado 
+
+
+===== PAGE 14 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+ 
+O processamento dos dados é feito e enviado para a equipe de gestão do cuidado em 
+tempo real.  
+ 
+Todos os dados são registrados no histórico do paciente na plataforma e visíveis no 
+dashboard da equipe de gestão do cuidado com carimbo de data/hora para fins de auditoria 
+e continuidade do cuidado. 
+ 
+UFPE / Maio de 2026​
+Página 14 
+
+
+===== PAGE 15 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+9. Suporte à Decisão Clínica 
+A plataforma oferece suporte à decisão, não substitui o julgamento clínico da equipe de 
+saúde. O módulo de IA fornece: 
+•​
+Lista de prioridades por paciente (lista) e por território (georreferenciamento), 
+baseada no cruzamento da classificação de prioridade e da presença de alerta. 
+•​
+Recomendações clínicas automatizadas contextualizadas: agendamento de 
+consultas e frequência de reavaliações; 
+•​
+Visualização da evolução clínica (dashboard) em linha do tempo, permitindo 
+avaliação longitudinal por paciente e por grupos de pacientes para ajuste no plano 
+de cuidados individuais. 
+O profissional de saúde tem autonomia para aceitar, modificar ou recusar as 
+recomendações da IA. 
+ 
+UFPE / Maio de 2026​
+Página 15 
+
+
+===== PAGE 16 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+10. Periodicidade de Monitoramento por Cenário 
+A frequência de coleta e monitoramento é determinada pela classificação de prioridades e 
+geração de alertas conforme cada cenário, podendo ser ajustada ao longo do 
+acompanhamento pela equipe de gestão do cuidado. 
+ 
+Cenário 
+Frequência de Monitoramento 
+ATENTO 60+  
+IVF-20 alto – 3 meses 
+IVF-20 médio – 2 meses 
+IVF-20 baixo – 1 mês 
+ 
+Alertas críticos servirão para suporte à decisão clínica -> antecipar 
+agendamento com equipe, aumentar frequência de acompanhamento 
+com equipe ou ACS; 
+CardioRemoto  
+Pacientes controlados (Verde): coleta a cada 90 dias. Pacientes 
+moderados ou graves (Amarelo/Vermelho): coleta a cada 30 dias. A 
+próxima visita é calculada automaticamente após cada registro. Alertas 
+críticos (PA ≥ 180/120 ou < 90/60 mmHg; glicemia ≥ 250 ou < 70 
+mg/dL; LDL ≥ 190 mg/dL) geram notificação imediata à equipe médica 
+para antecipação do atendimento 
+FamilIAr_Ativa  Acompanhamento 
+ativo 
+via 
+atualização 
+constante 
+feita 
+pelo 
+paciente/cuidador. Casos sem atualização a mais de uma semana 
+serão notificados via aplicativo. Coleta usando ferramentas como o 
+ESAS (Escala de Avaliação de Sintomas de Edmonton) que é um 
+questionário validado para registrar e medir a intensidade de 
+sintomas físicos e emocionais. Em caso de alerta o profissional de 
+saúde e a gestão são notificados para tomarem as diligências cabíveis. 
+AgroSUS  
+Trabalhadores com risco Alto (inibição de colinesterase 90–100%): 
+afastamento imediato da exposição e exames semanais até 
+normalização dos níveis enzimáticos. Risco Médio (60–90%): 
+acompanhamento e exame mensal. Risco Baixo (≤ 50–60%): 
+monitoramento semestral, conforme NR-7. Em qualquer nível, a 
+reclassificação ocorre automaticamente após cada novo resultado de 
+colinesterase registrado na plataforma. 
+ 
+UFPE / Maio de 2026​
+Página 16 
+
+
+===== PAGE 17 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+11. Indicadores de Monitoramento do Protocolo 
+Os indicadores a seguir serão utilizados para avaliar a aderência ao protocolo, a qualidade 
+dos dados coletados e o desempenho clínico da plataforma ao longo dos ciclos de 
+validação. 
+14.1 Indicadores de Processo 
+•​
+Taxa de cadastro: proporção de elegíveis identificados que foram efetivamente 
+cadastrados na plataforma. 
+•​
+Taxa de completude de coleta: proporção de coletas realizadas conforme o protocolo 
+em relação às previstas. 
+•​
+Taxa de alertas respondidos em tempo: proporção de alertas críticos e prioritários 
+com resposta documentada. 
+•​
+Taxa de funcionamento offline: proporção de coletas realizadas em modo offline com 
+sincronização bem-sucedida. 
+14.2 Indicadores de Resultado  
+•​
+Variação das classificações de prioridades e alertas da população monitorada ao 
+longo do tempo. 
+•​
+Nível de satisfação de usuários (ACS, profissionais de saúde, pacientes/cuidadores) 
+avaliado por questionário padronizado. 
+•​
+Tempo médio de resposta a alertas críticos (da geração do alerta ao registro da 
+conduta). 
+ 
+UFPE / Maio de 2026​
+Página 17 
+
+
+===== PAGE 18 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+12. Interoperabilidade com o Ecossistema SUS Digital 
+•​
+e-SUS APS: importação de cadastros e dados clínicos de pacientes já registrados 
+na APS; envio de registros de atendimento (RAC). 
+•​
+e-SUS Território: integração com os dados de cadastro territorial e de famílias 
+realizados pelos ACS. 
+•​
+RNDS (Rede Nacional de Dados em Saúde): envio de dados clínicos nos padrões 
+estabelecidos pelo Ministério da Saúde, conforme Portaria GM/MS nº 1.434/2020. 
+•​
+Padrão de dados: HL7 FHIR R4, com vocabulários CID-10 e LOINC para codificação 
+de diagnósticos e exames. 
+•​
+Dispositivos IoT: integração via APIs abertas e/ou Bluetooth Low Energy (BLE), com 
+dispositivos certificados pela ANVISA. 
+•​
+Outros conforme cada cenário 
+ 
+UFPE / Maio de 2026​
+Página 18 
+
+
+===== PAGE 19 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+13. Aspectos Éticos, Legais e de Privacidade 
+O protocolo segue a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 
+13.709/2018), a Resolução CNS nº 466/2012 e a Resolução CNS nº 510/2016, que 
+regulamentam a pesquisa com seres humanos no Brasil. A tabela a seguir sintetiza as 
+diretrizes aplicadas. 
+ 
+Aspecto 
+Diretriz Aplicada 
+Comitê de Ética em Pesquisa 
+(CEP) 
+O projeto será submetido ao Comitê de Ética em Pesquisa 
+conforme Resolução CNS nº 466/2012 e nº 510/2016. Somente 
+executado após aprovação. 
+Consentimento 
+TCLE assinado ou registrado digitalmente antes da inclusão na 
+plataforma. Pacientes analfabetos: testemunha + impressão 
+digital. 
+Coleta de dados sensíveis 
+Dados de saúde são dados sensíveis (Art. 11 LGPD). Coleta 
+somente mediante consentimento específico e com finalidade 
+declarada. 
+Minimização 
+Coleta apenas dos dados estritamente necessários para cada 
+cenário clínico. 
+Segurança 
+Armazenamento criptografado; controle de acesso por perfil; log 
+de auditoria; transmissão via HTTPS/TLS. 
+Interoperabilidade 
+Dados trafegam no padrão HL7 FHIR. Integração com e-SUS 
+APS, e-SUS Território e RNDS conforme Portaria GM/MS nº 
+1.434/2020. 
+Anonimização no Dashboard 
+Gestor 
+O gestor acessa apenas dados desidentificados, conforme Art. 
+12 da LGPD. 
+Direitos do titular 
+O paciente pode solicitar acesso, correção ou exclusão dos seus 
+dados a qualquer momento. 
+ 
+O projeto será submetido ao Comitê de Ética em Pesquisa (CEP) da UFPE, antes do início 
+das coletas com participantes humanos. Nenhuma coleta de dados primários será iniciada 
+sem parecer favorável do CEP. 
+ 
+UFPE / Maio de 2026​
+Página 19 
+
+
+===== PAGE 20 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+14. Referências 
+ 
+BRASIL. Ministério da Saúde. Cadernos da Atenção Básica no 19. Envelhecimento e 
+Saúde da Pessoa Idosa. 
+Duarte YAO et al. IVFI-20: Índice de Vulnerabilidade Funcional. 
+World Health Organization. ICOPE Guidelines: Integrated Care for Older People, 2017. 
+Zhang, X., & Wu, Y. (2025). A bibliometric analysis and science mapping of home 
+telemonitoring for older adults. Educational Gerontology, 1–19. 
+https://doi.org/10.1080/03601277.2025.2505987 
+MARTINS, Diogo et al. Interoperability of telemonitoring data in digital health solutions: 
+a scoping review. Frontiers in Digital Health, v. 7, p. 1502260, 2025. 
+BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde (SAPS). Ficha de 
+Cadastro Individual: e-SUS Atenção Primária (e-SUS APS). Versão atualizada. Brasília: 
+Ministério da Saúde. Disponível em: https://aps.saude.gov.br/ape/esus.  
+BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde (SAPS). Ficha de 
+Visita Domiciliar e Territorial: e-SUS Atenção Primária (e-SUS APS). Versão atualizada. 
+Brasília: Ministério da Saúde. Disponível em: https://aps.saude.gov.br/ape/esus.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+UFPE / Maio de 2026​
+Página 20 
+
+
+===== PAGE 21 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+15. ANEXOS 
+15.1 FLUXOGRAMA CLÍNICO GERAL DA PLATAFORMA MAREIA 
+ 
+UFPE / Maio de 2026​
+Página 21 
+
+
+===== PAGE 22 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+5.2 FLUXOGRAMA CLÍNICO DO CENÁRIO ATENTO 60+ 
+ 
+UFPE / Maio de 2026​
+Página 22 
+
+
+===== PAGE 23 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+ 
+ 
+15.3 FLUXOGRAMA CLÍNICO DO CENÁRIO AGROSUS 
+ 
+ 
+UFPE / Maio de 2026​
+Página 23 
+
+
+===== PAGE 24 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+15.4 FLUXOGRAMA CLÍNICO DO CENÁRIO CARDIOREMOTO 
+ 
+Segue o Fluxo geral do mareIA com distinção na triagem, que considera os cenários de diabetes, hipertensão arterial sistêmica e 
+dislipidemia, respectivamente, conforme diagramas a seguir: 
+ 
+UFPE / Maio de 2026​
+Página 24 
+
+
+===== PAGE 25 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+ 
+UFPE / Maio de 2026​
+Página 25 
+
+
+===== PAGE 26 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+ 
+UFPE / Maio de 2026​
+Página 26 
+
+
+===== PAGE 27 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+15.5 FLUXOGRAMA CLÍNICO DO CENÁRIO FAMILIARATIVA 
+ 
+ 
+UFPE / Maio de 2026​
+Página 27 
+
+
+===== PAGE 28 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+15. 6 Anexos Cenário ATENTO 60+ 
+15.6.1. Ficha de Cadastro Individual da Atenção Primária
+ 
+UFPE / Maio de 2026​
+Página 28 
+
+
+===== PAGE 29 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+ 
+ 
+ 
+ 
+ 
+UFPE / Maio de 2026​
+Página 29 
+
+
+===== PAGE 30 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+15.6.2 Ficha de Visita Domiciliar e Territorial (ATENTO 60+) 
+ 
+ 
+ 
+ 
+ 
+UFPE / Maio de 2026​
+Página 30 
+
+
+===== PAGE 31 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+15.6.3 Instrumento - Índice de Vulnerabilidade Clínico-Funcional-20 
+ 
+NOME: 
+  
+IDADE:                  ​ SEXO: 
+ÍNDICE DE VULNERABILIDADE CLÍNICO-FUNCIONAL-20 (IVCF-20) 
+www.ivcf-20.com.br 
+  
+Responda às perguntas abaixo com a ajuda de familiares ou acompanhantes. Marque a opção mais 
+apropriada para a sua condição de saúde atual. 
+Todas as respostas devem ser confirmadas por alguém que conviva com o idoso. 
+Nos idosos incapazes de responder, utilizar as respostas do cuidador. 
+  
+Pontu
+ação 
+(FINA
+L 40) 
+  
+  
+IDADE 
+  
+  
+1. Qual é a sua idade? 
+( ) 60 a 74 anos0 
+  
+( ) 75 a 84 anos1 
+( ) ≥ 85 anos3 
+AUTO PERCEPÇÃO DA 
+SAÚDE 
+2. Em geral, comparando com outras 
+pessoas de sua idade, você diria que 
+sua saúde é: 
+( ) Excelente, muito boa ou 
+boa0 
+  
+( ) Regular ou ruim1 
+ATIVIDADES DE 
+VIDA DIÁRIA 
+AVD Instrumental 
+3. Por causa de sua saúde ou condição física, você deixou de 
+fazer compras? 
+( )Sim4          ​
+( )Não ou não faz compras por outros motivos que 
+não a saúde 
+  
+Respostas 
+positiva valem 4 
+pontos cada.. 
+Todavia, a 
+pontuação 
+máxima do item 
+é de 4 pontos, 
+mesmo que o 
+idoso tenha 
+respondido sim 
+para todas as 
+questões 3, 4 e 
+5. 
+4. Por causa de sua saúde ou condição física, você deixou de 
+controlar seu dinheiro, gastos ou pagar as contas de sua casa? 
+( ) Sim4          ​
+( ) Não ou não controla o dinheiro por outros motivos 
+que não a saúde 
+  
+  
+  
+Má
+x. 
+4 
+pts 
+5. Por causa de sua saúde ou condição física, você deixou de 
+realizar pequenos trabalhos domésticos, como lavar louça, 
+arrumar a casa ou fazer limpeza leve? 
+( ) Sim4          ​
+( ) Não ou não faz mais pequenos trabalhos 
+domésticos por outros motivos que não a saúde 
+AVD Básica 
+6. Por causa de sua saúde ou condição física, você deixou de 
+tomar banho sozinho? ( ) Sim6( ) Não 
+  
+  
+  
+COGNIÇÃO 
+7. Algum familiar ou amigo falou que você está 
+ficando esquecido? ( ) Sim1 
+( ) Não 
+  
+8. Este esquecimento está piorando nos últimos meses? ( ) Sim1     
+​
+( ) Não 
+9. Este esquecimento está impedindo a realização de alguma 
+atividade do cotidiano? ( ) Sim2( ) Não 
+  
+  
+HUMOR 
+10. No último mês, você ficou com desânimo, 
+tristeza ou desesperança? ( ) Sim2 
+( ) Não 
+  
+11. No último mês, você perdeu o interesse ou prazer 
+em atividades anteriormente prazerosas? ( ) Sim2 ( ) Não 
+  
+MOBILIDADE 
+  
+Alcance, preensão 
+e pinça 
+12. Você é incapaz de elevar os braços acima do nível do ombro? ( 
+) Sim1 ( ) Não 
+  
+13. Você é incapaz de manusear ou segurar pequenos objetos? ( ) 
+Sim1  ( ) Não 
+  
+  
+Capacidade 
+aeróbica e /ou 
+muscular 
+14.  Você tem alguma das quatro condições abaixo 
+relacionadas? ( ) Sim2 ( ) Não 
+·   ​ Perda de peso não intencional de 4,5 kg ou 5% 
+do peso corporal no último ano ou 6 kg nos 
+últimos 6 meses ou 3 kg no último mês ( ); 
+·   ​ Índice de Massa Corporal (IMC) menor que 22 kg/m2 ( ); 
+·   ​ Circunferência da panturrilha a < 31 cm ( ); 
+·   ​ Tempo gasto no teste de velocidade da marcha (4m) > 
+5 segundos ( ). 
+  
+  
+Má
+x. 
+2 
+pts 
+UFPE / Maio de 2026​
+Página 31 
+
+
+===== PAGE 32 =====
+Plataforma mareIA  |  Protocolo Clínico Geral  |  WP1 — Relatório Trimestre 1 
+  
+Marcha 
+15. Você tem dificuldade para caminhar capaz de impedir a 
+realização de alguma atividade do cotidiano? ( ) Sim2 ( ) Não 
+  
+16. Você teve duas ou mais quedas no último ano? ( ) Sim2 ( ) Não 
+Continência 
+esfincteriana 
+17. Você perde urina ou fezes, sem querer, em algum momento? ( ) 
+Sim2 ( ) Não 
+  
+  
+COMUNICAÇÃO 
+  
+Visão 
+  
+18. Você tem problemas de visão capazes de impedir a 
+realização de alguma atividade do cotidiano? É permitido o uso 
+de óculos ou lentes de contato. ( ) Sim2 ( ) Não 
+  
+  
+Audição 
+  
+19. Você tem problemas de audição capazes de impedir 
+a realização de alguma atividade do cotidiano? É 
+permitido o uso de aparelhos de audição. ( ) Sim2      ​ ( 
+) Não 
+  
+COMORBIDADES 
+  
+MÚLTIPLAS 
+  
+Polipatologia 
+20. Você tem alguma das três condições abaixo relacionadas? 
+  
+·​ Cinco ou mais doenças crônicas ( ); 
+  
+Polifarmácia 
+·​ Uso regular de cinco ou mais medicamentos diferentes, 
+todo dia ( ); 
+·​ Internação recente, nos últimos 6 meses ( ). 
+  
+Internação 
+recente (<6 
+meses) 
+  
+( ) Sim4  ​
+( ) Não 
+Má
+x. 
+4 
+pts 
+Score: 
+( ) 0 a 6 pontos: Idoso com BAIXO risco de vulnerabilidade Clínico-funcional – IDOSO ROBUSTO 
+( ) 7 a 14 pontos: Idoso com MODERADO risco de vulnerabilidade Clínico-funcional – IDOSO 
+EM RISCO DE FRAGILIZAÇÃO ( ) ≥ 15 pontos: Idoso com ALTO risco de vulnerabilidade 
+clínico-funcional – IDOSO FRÁGIL 
+ 
+ 
+ 
+ 
+ 
+ 
+Documento elaborado pela equipe clínica e de pesquisa da Plataforma mareIA 
+UFPE | UFPB | UFPel | FATEC-Ferraz de Vasconcelos |  —  Maio de 2026 
+Versão 1.0  |  Relatório WP1 — 1º Trimestre  |  Programa RNP Saúde Digital 2025 
+ 
+ 
+UFPE / Maio de 2026​
+Página 32 
