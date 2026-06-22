@@ -56,9 +56,12 @@ Registro vivo de armadilhas e como evitá-las. **Atualize a cada problema não-�
 - **Solução (1ª tentativa, insuficiente):** chamar comandos explícitos — mas `sushi`/`java` também
   não estão no PATH do shell não-login do Actions (rodando como root): a imagem instala o tooling no
   perfil do usuário `publisher`, então `sushi: command not found` (exit 127) persistia.
-- **Solução final:** num passo dedicado, **descobrir os binários por `find`** (`node sushi java jekyll
-  ruby gem bundle`) e gravar seus diretórios em `$GITHUB_PATH`; o passo seguinte então roda
-  `java -jar publisher.jar publisher -ig .` (o IG Publisher invoca o SUSHI sozinho). Não depender do
-  profile/login shell da imagem. (Os scripts `_genonce`/`_updatePublisher` do repo seguem úteis localmente.)
+- **Diagnóstico (DIAG no CI):** a imagem roda como `root`; `node`/`npm`/`npx`/`jekyll` estão em
+  `/usr/local/bin` (no PATH padrão) e `java` em `/opt/java/openjdk/bin` (só no PATH de login). E,
+  crucialmente, **o SUSHI NÃO está instalado na imagem** (`find / -name sushi` não retorna nada) —
+  os scripts da imagem ficam em `/home/publisher/bin/ig-publisher-scripts`.
+- **Solução final:** no CI, **instalar o SUSHI** (`npm install -g fsh-sushi`) e adicionar
+  `$(npm prefix -g)/bin` e `/opt/java/openjdk/bin` ao `$GITHUB_PATH`; depois rodar
+  `java -jar publisher.jar publisher -ig .` (o IG Publisher chama o `sushi`, agora no PATH).
 
 <!-- Próximas lições: adicionar abaixo com id incremental. -->

@@ -40,18 +40,23 @@ jobs:
             -o publisher.jar
           ls -la publisher.jar
 
-      - name: DIAG ambiente da imagem
+      - name: Preparar tooling (SUSHI via npm; Java no PATH)
         shell: bash
         run: |
-          echo "== whoami =="; whoami
-          echo "== login PATH =="; bash -lc 'echo $PATH' || true
-          echo "== which (login) =="; bash -lc 'for b in sushi java node jekyll bundle npx npm; do printf "%s -> " $b; command -v $b || echo NAO; done' || true
-          echo "== find sushi (sem filtro) =="; find / -name sushi 2>/dev/null | head
-          echo "== find _genonce.sh =="; find / -name "_genonce.sh" 2>/dev/null | head
-          echo "== ls /home =="; ls -la /home 2>/dev/null; ls -la /home/publisher 2>/dev/null
-          echo "== /etc/profile.d =="; ls -la /etc/profile.d 2>/dev/null; cat /etc/profile.d/*.sh 2>/dev/null | head -60
-          echo "== /root/.bashrc =="; cat /root/.bashrc 2>/dev/null | head -30
-          exit 1
+          set -euo pipefail
+          # A imagem traz node/npm/jekyll em /usr/local/bin e java em /opt/java/openjdk/bin,
+          # mas NAO inclui o SUSHI. Instalamos o fsh-sushi e expomos os diretorios no PATH.
+          npm install -g fsh-sushi
+          echo "$(npm prefix -g)/bin" >> "$GITHUB_PATH"
+          echo "/opt/java/openjdk/bin" >> "$GITHUB_PATH"
+
+      - name: Compilar o IG (SUSHI + IG Publisher)
+        shell: bash
+        run: |
+          set -euo pipefail
+          sushi --version
+          java -version
+          java -jar publisher.jar publisher -ig .
 
       - name: Falhar se houver erros de QA
         run: |
