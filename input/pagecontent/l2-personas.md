@@ -1,6 +1,11 @@
 Componente 2 do DAK — *Generic personas*. Os ids reservados abaixo mapeiam para `ActorDefinition`
 quando o IG migrar para FHIR R5 (ver ADR-0006; nesta fase R4 as personas ficam no L2).
 
+#### Diagrama de atores (PlantUML)
+
+{% include actors-atento60.svg %}
+<br clear="all"/>
+
 | Id (ActorDefinition) | Persona | Acesso | Função no fluxo |
 |---|---|---|---|
 | `patient-elderly` | **Pessoa idosa** (pessoa cuidada) | App móvel (online/offline) | Autorrelato de sintomas; recebe orientações e conteúdo educativo. |

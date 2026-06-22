@@ -2,6 +2,7 @@ Componente 8 do DAK — *Functional and non-functional requirements*. Fonte: `l2
 No L3: `CapabilityStatement` (capacidades FHIR) e `Requirements`.
 
 ### Requisitos Funcionais
+
 | Id | Requisito | Fonte |
 |---|---|---|
 | RF-01 | Cadastro de paciente apenas com TCLE registrado | p.9, p.19 |
@@ -15,6 +16,7 @@ No L3: `CapabilityStatement` (capacidades FHIR) e `Requirements`.
 | RF-09 | Telessaúde (chat assíncrono) e conteúdo educativo | p.7 |
 
 ### Requisitos Não-Funcionais
+
 | Id | Requisito | Fonte |
 |---|---|---|
 | RNF-01 | Interoperabilidade **HL7 FHIR R4**; vocabulários **CID-10** e **LOINC** | p.17 |

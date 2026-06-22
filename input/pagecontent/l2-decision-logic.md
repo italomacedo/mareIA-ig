@@ -9,6 +9,7 @@ Soma dos 20 itens, respeitando os tetos de grupo (AVD Instrumental q3–q5 = má
 q20 = máx 4) → `ivcf-score` (0–40). **REVISAR ADR-0004.**
 
 ### DT-2 · Faixa de risco
+
 | Escore | Faixa |
 |---|---|
 | 0–6 | **Robusto** (baixo risco) |
@@ -18,6 +19,7 @@ q20 = máx 4) → `ivcf-score` (0–40). **REVISAR ADR-0004.**
 **REVISAR ADR-0004** (escore máximo e faixas a confirmar).
 
 ### DT-3 · Periodicidade de monitoramento
+
 | Faixa de risco | Frequência de coleta |
 |---|---|
 | Alto (Frágil) | a cada **3 meses** |

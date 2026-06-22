@@ -1,5 +1,15 @@
 Componente 3 do DAK — *User scenarios*. Narrativas curtas por persona, cobrindo as 4 macrofases.
 
+#### Diagrama de casos de uso (PlantUML)
+
+{% include usecases-atento60.svg %}
+<br clear="all"/>
+
+#### Diagrama de sequência — cenário ponta a ponta (PlantUML)
+
+{% include scenario-sequence-atento60.svg %}
+<br clear="all"/>
+
 ### Cenário A — Entrada e cadastro (Pré-Intervenção)
 **Como** Equipe de Gestão do Cuidado, **identifico** uma pessoa idosa já acompanhada na USF que
 atende aos critérios de elegibilidade, **para** incluí-la no telemonitoramento. O **ACS** confirma a

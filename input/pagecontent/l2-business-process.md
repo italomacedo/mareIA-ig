@@ -1,6 +1,11 @@
 Componente 4 do DAK — *Business processes and workflows*. As 4 macrofases do fluxo ATENTO 60+.
 O diagrama BPMN 2.0 fonte está em `l2/4-business-process.bpmn` (importável no bpmn.io).
 
+#### Diagrama de atividades (PlantUML)
+
+{% include process-atento60.svg %}
+<br clear="all"/>
+
 ### Fase 1 — Pré-Intervenção (Entrada e Cadastro)
 1. Identificação de pessoa idosa elegível pela Equipe de Gestão do Cuidado.
 2. Verificação dos critérios de inclusão/exclusão.
@@ -29,6 +34,7 @@ O diagrama BPMN 2.0 fonte está em `l2/4-business-process.bpmn` (importável no 
 5. Supervisão contínua pela Equipe de Monitoramento (telessaúde).
 
 ### Tarefas × dados × decisões
+
 | Tarefa | Dados (comp.5) | Decisão (comp.6) |
 |---|---|---|
 | Triagem IVCF-20 | itens q01–q20 | escore + faixa de risco |

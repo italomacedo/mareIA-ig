@@ -64,4 +64,16 @@ Registro vivo de armadilhas e como evitá-las. **Atualize a cada problema não-�
   `$(npm prefix -g)/bin` e `/opt/java/openjdk/bin` ao `$GITHUB_PATH`; depois rodar
   `java -jar publisher.jar publisher -ig .` (o IG Publisher chama o `sushi`, agora no PATH).
 
+## HEL-008 — Kramdown exige linha em branco antes de tabelas; PlantUML via images-source; páginas em /en/
+- **Sintoma:** tabelas em `l2-decision-logic` e `l2-indicators` renderizavam como texto cru
+  (`<p>| Escore | Faixa |`), e o `---` virava travessão (`—`).
+- **Causa:** no Kramdown (engine do Jekyll), uma tabela **logo após um heading/parágrafo sem linha
+  em branco** não é reconhecida como tabela. Necessário **uma linha em branco antes** da 1ª linha.
+- **Solução:** inserir linha em branco antes de toda tabela (script em `input/pagecontent/*.md`).
+- **PlantUML:** fontes `.plantuml` em `input/images-source/`; o IG Publisher gera SVG e a página inclui
+  com `{% include nome.svg %}` (SVG é embutido inline). NÃO usar fenced code ```plantuml.
+  Ref.: https://build.fhir.org/ig/FHIR/ig-guidance/diagrams-plantuml.html
+- **Multilíngue:** com `fhir2.base.template`, as páginas finais ficam em `output/en/...`
+  (e o site publicado em `.../en/l2-*.html`), não na raiz.
+
 <!-- Próximas lições: adicionar abaixo com id incremental. -->
