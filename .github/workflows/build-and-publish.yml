@@ -40,31 +40,18 @@ jobs:
             -o publisher.jar
           ls -la publisher.jar
 
-      - name: Localizar tooling da imagem (sushi/java/node/jekyll fora do PATH do shell)
+      - name: DIAG ambiente da imagem
         shell: bash
         run: |
-          set -euo pipefail
-          add() {
-            for name in "$@"; do
-              p="$(find /usr /opt /home /root \( -type f -o -type l \) -name "$name" 2>/dev/null | grep -E '/bin/' | head -1 || true)"
-              if [ -n "$p" ]; then
-                echo "$(dirname "$p")" >> "$GITHUB_PATH"
-                echo "encontrado: $name -> $p"
-              else
-                echo "::warning::binario nao encontrado: $name"
-              fi
-            done
-          }
-          add node sushi java jekyll ruby gem bundle
-
-      - name: Compilar o IG (SUSHI + IG Publisher)
-        shell: bash
-        run: |
-          set -euo pipefail
-          echo "PATH=$PATH"
-          sushi --version
-          java -version
-          java -jar publisher.jar publisher -ig .
+          echo "== whoami =="; whoami
+          echo "== login PATH =="; bash -lc 'echo $PATH' || true
+          echo "== which (login) =="; bash -lc 'for b in sushi java node jekyll bundle npx npm; do printf "%s -> " $b; command -v $b || echo NAO; done' || true
+          echo "== find sushi (sem filtro) =="; find / -name sushi 2>/dev/null | head
+          echo "== find _genonce.sh =="; find / -name "_genonce.sh" 2>/dev/null | head
+          echo "== ls /home =="; ls -la /home 2>/dev/null; ls -la /home/publisher 2>/dev/null
+          echo "== /etc/profile.d =="; ls -la /etc/profile.d 2>/dev/null; cat /etc/profile.d/*.sh 2>/dev/null | head -60
+          echo "== /root/.bashrc =="; cat /root/.bashrc 2>/dev/null | head -30
+          exit 1
 
       - name: Falhar se houver erros de QA
         run: |
