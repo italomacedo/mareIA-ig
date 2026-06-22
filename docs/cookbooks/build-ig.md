@@ -24,5 +24,16 @@ sushi .
 | Dependência não baixa | sem rede / versão errada do pacote | revisar `dependencies:` e cache `~/.fhir` |
 | `java` ausente | IG Publisher não roda | instalar Temurin/OpenJDK 11+ (ver Hard-Earned Lessons) |
 
-## CI
-Pode-se rodar apenas `sushi .` em CI como gate barato; o IG Publisher completo em job separado.
+## CI / GitHub Actions
+O workflow [`.github/workflows/build-and-publish.yml`](../../.github/workflows/build-and-publish.yml)
+compila o IG na imagem oficial **`hl7fhir/ig-publisher-base`** (Java + Ruby/Jekyll + Node + SUSHI) e
+publica `output/` no **GitHub Pages**:
+
+- **Gatilho:** push na `main` ou execução manual (`workflow_dispatch`).
+- **Job `build`:** `_updatePublisher.sh -y` → `_genonce.sh` → falha se o QA tiver erros →
+  `upload-pages-artifact` com `path: output`.
+- **Job `deploy`:** `deploy-pages` publica o artefato.
+
+**Pré-requisito (uma vez):** em *Settings → Pages*, definir **Source = GitHub Actions**
+(ou via `gh api -X POST repos/<owner>/<repo>/pages -f build_type=workflow`).
+Site final: `https://<owner>.github.io/mareIA-ig/`.
