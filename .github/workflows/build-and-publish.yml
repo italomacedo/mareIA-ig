@@ -33,10 +33,18 @@ jobs:
         run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Baixar o IG Publisher (publisher.jar)
-        run: _updatePublisher.sh -y
+        shell: bash
+        run: |
+          curl -L --fail --retry 3 \
+            https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar \
+            -o publisher.jar
+          ls -la publisher.jar
 
       - name: Compilar o IG (SUSHI + IG Publisher)
-        run: _genonce.sh
+        shell: bash
+        run: |
+          sushi .
+          java -jar publisher.jar publisher -ig .
 
       - name: Falhar se houver erros de QA
         run: |

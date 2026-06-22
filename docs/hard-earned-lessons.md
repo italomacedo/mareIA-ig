@@ -47,4 +47,14 @@ Registro vivo de armadilhas e como evitá-las. **Atualize a cada problema não-�
   **sempre** preencher `valueQuantity.unit` (string) além de `value`/`code`/`system`. Para PA, modelar
   o painel completo (85354-9 + componentes) em iteração futura.
 
+## HEL-007 — `hl7fhir/ig-publisher-base` não põe os scripts no PATH
+- **Sintoma:** no GitHub Actions, `run: _updatePublisher.sh -y` falhou com
+  `_updatePublisher.sh: not found` (exit 127).
+- **Causa:** na imagem, os helpers `_updatePublisher.sh`/`_genonce.sh` não estão no `PATH`, e o
+  diretório de trabalho não está no `PATH`. Os scripts do próprio repo também chegam sem bit de
+  execução após checkout em Linux (foram criados no Windows).
+- **Solução:** no CI, usar comandos explícitos em vez dos scripts:
+  `curl -L .../publisher.jar -o publisher.jar` → `sushi .` → `java -jar publisher.jar publisher -ig .`.
+  (Os scripts `_genonce`/`_updatePublisher` do repo seguem úteis para uso local interativo.)
+
 <!-- Próximas lições: adicionar abaixo com id incremental. -->
